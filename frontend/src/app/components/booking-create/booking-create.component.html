@@ -1,18 +1,24 @@
-<h2>New Booking</h2>
-<form (ngSubmit)="submit()">
-  <label>Room
-    <select [(ngModel)]="booking.roomId" name="room">
-      <option *ngFor="let room of rooms" [value]="room.id">{{room.name}}</option>
-    </select>
-  </label>
-  <label>Start Time
-    <input type="datetime-local" [(ngModel)]="booking.startTime" name="start">
-  </label>
-  <label>End Time
-    <input type="datetime-local" [(ngModel)]="booking.endTime" name="end">
-  </label>
-  <label>Name
-    <input type="text" [(ngModel)]="booking.userName" name="user">
-  </label>
-  <button type="submit">Book</button>
-</form>
+<mat-card>
+  <mat-card-title>New Booking</mat-card-title>
+  <form (ngSubmit)="submit()" class="booking-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Room</mat-label>
+      <mat-select [(ngModel)]="booking.roomId" name="room">
+        <mat-option *ngFor="let room of rooms" [value]="room.id">{{room.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Start Time</mat-label>
+      <input matInput type="datetime-local" [(ngModel)]="booking.startTime" name="start">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>End Time</mat-label>
+      <input matInput type="datetime-local" [(ngModel)]="booking.endTime" name="end">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" [(ngModel)]="booking.userName" name="user">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Book</button>
+  </form>
+</mat-card>
