@@ -1,0 +1,18 @@
+<h2>New Booking</h2>
+<form (ngSubmit)="submit()">
+  <label>Room
+    <select [(ngModel)]="booking.roomId" name="room">
+      <option *ngFor="let room of rooms" [value]="room.id">{{room.name}}</option>
+    </select>
+  </label>
+  <label>Start Time
+    <input type="datetime-local" [(ngModel)]="booking.startTime" name="start">
+  </label>
+  <label>End Time
+    <input type="datetime-local" [(ngModel)]="booking.endTime" name="end">
+  </label>
+  <label>Name
+    <input type="text" [(ngModel)]="booking.userName" name="user">
+  </label>
+  <button type="submit">Book</button>
+</form>
